@@ -1,0 +1,192 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+.logo{
+    width: 100px;
+}
+#eye{
+    width: 27px;
+    position: relative;
+    top: -18px;
+    display: block;
+    cursor: pointer;
+}
+.iconeye{
+    display: inline-block;
+}
+.main{
+    width: 100%;
+}
+form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #d5d2d2;
+    border-radius: 10px;
+    width: 750px;
+    padding: 25px;
+    /* height: 500px; */
+}
+
+.f{
+    color:blue;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 1px;
+    font-size: 30px;
+  }
+  .u{
+    color: red ;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 1px;
+    font-size: 30px;
+    
+  }
+  .n{
+    color: yellow;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 1px;
+    font-size: 30px;
+  
+  }
+  .d{
+    color: blue;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 1px;
+    font-size: 30px;
+  
+  }
+  .o{
+    color: green;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 1px;
+    font-size: 30px;
+  
+  }
+  .oo{
+    color: red ;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 0px;
+    font-size: 30px;
+  }
+  .heading{
+    padding: 15px;
+  }
+.h3{
+    position: relative;
+    margin: -20px 0 0 13px;
+    font-size: 23px;
+    font-family: jost;
+    letter-spacing: 1px;
+    padding-top: -30px;
+}
+
+input{
+    border: 1px solid #d5d2d2;
+    border-radius: 5px;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 15px;
+    outline: none;
+}
+input:focus{
+    border: 1.5px solid #1f52f9;
+}
+.name{
+    display: inline-block;
+}
+input[type="name"]{
+    
+    display: block;
+    margin: 30px 0 0 10px;
+}
+input[type="username"]{
+    display: block;
+    margin: 10px 0 0 10px;
+    width: 390px;
+}
+
+.gmail{
+    position: relative;
+    display: block;
+    top: -47px;
+    left: 330px;
+    font-family: roboto;
+    color: #333;
+    font-size: 15px;
+    cursor: default;
+}
+
+
+.pass{
+    display: inline-block;
+}
+.password{
+    display: block;
+    width: 140px;
+    margin: 0 5px 0 10px;
+}
+
+a{
+    display: block;
+    position: relative;
+    font-family: roboto;
+    text-decoration: none;
+}
+.line1{
+    font-size: 12px;
+    margin: -30px 0 0 15px;
+}
+.line2{
+    color: #1144ed;
+    font-size: 15px;
+    margin: 20px 0 20px 15px;
+
+}
+.line3{
+    font-size: 12px;
+    margin: -10px 0 0 15px;
+    width: 310px;
+
+}
+.line4{
+    font-size: 15px;
+    margin: 20px 8px;
+    color: #4971f6;
+    display: inline-block;
+    font-family: arial rounded mt;
+}
+label{
+    position: relative;
+    top: -28px;
+    left: 20px;
+    font-family: roboto;
+    font-size: 15px;
+    color: #555;
+    pointer-events: none;
+
+}
+input[type="submit"]{
+    background: #4971f6;
+    border: none;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 15px;
+    margin: 40px 0 30px 180px;
+}
+
+
