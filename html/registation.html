@@ -1,79 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
+<<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Gmail Sign In</title>
+        <link rel="stylesheet"
+        type = "text/css"
+        href = "../css/registation.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/registation.css">
-    <script src="../js/registration.js"></script>
-</head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
 
-<body>
-    <div class="main">
-        <form class="form">
-            <div class="heading">
-                <span class="f">F</span>
-                <span class="u">u</span>
-                <span class="n">n</span>
-                <span class="d">d</span>
-                <span class="o">o</span>
-                <span class="oo">o</span>
 
-            </div>
-            <div class="h3">
-                <p>Create your Fundoo Account</p>
-            </div>
-            <div class="name" id="first">
-                <input id="firstName" type="name" name="" value="" placeholder="">
-                <label> First name</label>
+<script src="/js/registration.js"></script>
 
-            </div>
+    </head>
+    <body>
+        <div class = "entirepage">
+                <div class = "container">
+                    <div class="mainPage">
+                        <form class="form" id="login">
+                            <div class="heading">
+                                <span class="f">F</span>
+                                <span class="u">u</span>
+                                <span class="n">n</span>
+                                <span class="d">d</span>
+                                <span class="o">o</span>
+                                <span class="oo">o</span>
+                
+                            </div>
+                            <div class="heading">
+                                <h1>Create your Google Account</h1>
+                            </div>
+                            <div class="name">
+                                <div class ="form_input-group">
+                                    <input type="text" class="form_input" id="firstname" autofocus placeholder="First name">
+                                    <div class="helperTextFName"></div>
+                                </div>
+                
+                                <div class ="form_input-group">
+                                    <input type="text" class="form_input" id="lastname" autofocus placeholder="Last name">
+                                    <div class="helperTextLName"></div>
+                                </div>
+                            </div>
 
-            <div class="name" id="last">
-                <input id="lastName" type="name" name="" value="" placeholder="">
-                <label> Last name</label>
+                            <div class ="form_input-group">
+                                <input type="text" class="form_input" id="username" autofocus placeholder="Username">
+                                <div class="helperTextUsername"></div>
+                                <p>You can use letters, numbers & periods</p>
+                                <!-- <p>Use my current email address Instead</p> -->
+                            </div>
 
-            </div>
-
-            <div class="username" id="user">
-                <input id="userName" type="username" name="" value="" placeholder="">
-                <label>Username</label>
-                <span class="gmail">@gmail.com</span>
-
-            </div>
-            <a href="" class="line1">You can use letters,numbers & periods</a>
-            <a href="" class="line2">Use my current email address instead</a>
-
-            <div class="pass" id="pas">
-                <input id="password" type="password" class="password" id="required" placeholder="">
-                <label> Password</label>
-
-            </div>
-
-            <div class="pass" id="psd">
-                <input id="cpassword" type="password" class="password" id="required" placeholder="">
-                <label> Conform</label>
-
-            </div>
-            <!-- <div class="iconeye">
-                <img src="../assets/visibility_off_FILL0_wght400_GRAD0_opsz48.svg" id="eye">
-            </div> -->
-            <a href="" class="line3">Use 8 more characters with a max of letters, numbers & symbles</a>
-            <a href="../html/login.html" class="line4">Sign in instead</a>
-            <input id="nxt" type="submit" name="" value="Next">
-
+                        <div class="passwordField">
+                                <div class ="form_input-group">
+                                    <input type="password" class="form_input" id="passwordMain1" autofocus placeholder="Password">
+                                    <div class="helperTextMPassword"></div>
+                                </div>
+                
+                                <div class ="form_input-group">
+                                    <input type="password" class="form_input" id="passwordConfirm1" autofocus placeholder="Confirm">
+                                    <div class="helperTextCPassword"></div>
+                                </div>
+                        </div>
+                        <p>Use 8 or more characters with a mix of letters, numbers & symbols</p>
             
-        </form>
-        <div class="side-image">
-            <img src="../assets/account.svg" alt="" class="side-logo">
-            <p class="para">One account. All of Fundoo<br>working for you</p>
+                        
+                
+                            <div class="lastButton">
+                                <a  href="../html/login.html" id="createAccount">Sign In Instead</a>
+                                <button class="next">Next</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
 
-        </div>
-            
-        
-    </div>
-    
-</body>
+                <div class ="logo">
+                    <img id="gLogo" src="../assets/account.svg" width="80%" height="50%"/>
+                    <p id="logoText">One account. All of Google,<br>working for you.</p>
+                    <!-- <p id="logoText"> working for you.</p> -->
+                </div>
+           </div>
+    </body>
 </html>

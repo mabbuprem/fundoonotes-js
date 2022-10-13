@@ -1,52 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <title>Gmail Sign In</title>
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
     <script src="../js/login.js"></script>
 </head>
+
 <body>
-    <div class="main">
-        <form class="form">
-            <div class="heading">
-                <span class="f">F</span>
-                <span class="u">u</span>
-                <span class="n">n</span>
-                <span class="d">d</span>
-                <span class="o">o</span>
-                <span class="oo">o</span>
+    <div class="container">
+        <div class="mainPage">
+            <form class="form" id="login">
+                <div class="heading1">
+                    <span class="f">F</span>
+                    <span class="u">u</span>
+                    <span class="n">n</span>
+                    <span class="d">d</span>
+                    <span class="o">o</span>
+                    <span class="oo">o</span>
 
-            </div>
-            <div class="login">
-                <h1>LOGIN</h1>
-            </div>
-            <div class="h3">
-                <p>Create your Fundoo Account</p>
-            </div>
-           
-            <div class="username">
-                <input type="username" name="" value="" placeholder="">
-                <label>Email</label>
-               
-            </div>
-            <div class="pass">
-                <input type="password" class="password" id="required" placeholder="">
-                <label> Password</label>
+                </div>
+                <div class="heading">
+                    <h1>Log In</h1>
+                    <!-- <h4>to continue to Gmail</h4> -->
+                </div>
+                <div class="form_input-group">
+                    <input type="text" class="form_input" autofocus placeholder="Email or Phone">
+                    <div class="helperTextEmail"></div>
+                </div>
 
-            </div>
-            <a href="" class="line1">Not your computer? Use Guest mode sign in privatly</a>
-            <a href="" class="line2">Forget password</a>
-            <a href="../html/registation.html" class="line3">create account</a>
-            <a href="" class="line4">learn more</a>
-            <input type="submit" name="" value="Next">
+                <div class="form_input-group">
+                    <input type="password" class="form_input1" autofocus placeholder="Password">
+                    <div class="helperTextPassword"></div>
+                </div>
 
-            
-        </form>
-        
-            
+                <h5>Forgot email?</h5>
+                <!-- <h3  class="line1">Not your computer? Use Guest mode sign in privatly</h3> -->
+
+                <div class="lastButton">
+                    <a href="../html/registation.html" id="createAccount">Create account</a>
+                    <button class="next">Next</button>
+                </div>
+            </form>
+
+        </div>
     </div>
 </body>
+
 </html>
