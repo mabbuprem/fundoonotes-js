@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/registation.css">
+    <script src="../js/registration.js"></script>
 </head>
 
 <body>
@@ -24,20 +25,20 @@
             <div class="h3">
                 <p>Create your Fundoo Account</p>
             </div>
-            <div class="name">
-                <input type="name" name="" value="">
+            <div class="name" id="first">
+                <input id="firstName" type="name" name="" value="" placeholder="">
                 <label> First name</label>
 
             </div>
 
-            <div class="name">
-                <input type="name" name="" value="">
+            <div class="name" id="last">
+                <input id="lastName" type="name" name="" value="" placeholder="">
                 <label> Last name</label>
 
             </div>
 
-            <div class="username">
-                <input type="username" name="" value="">
+            <div class="username" id="user">
+                <input id="userName" type="username" name="" value="" placeholder="">
                 <label>Username</label>
                 <span class="gmail">@gmail.com</span>
 
@@ -45,14 +46,14 @@
             <a href="" class="line1">You can use letters,numbers & periods</a>
             <a href="" class="line2">Use my current email address instead</a>
 
-            <div class="pass">
-                <input type="password" class="password" id="required">
+            <div class="pass" id="pas">
+                <input id="password" type="password" class="password" id="required" placeholder="">
                 <label> Password</label>
 
             </div>
 
-            <div class="pass">
-                <input type="password" class="password" id="required">
+            <div class="pass" id="psd">
+                <input id="cpassword" type="password" class="password" id="required" placeholder="">
                 <label> Conform</label>
 
             </div>
@@ -61,7 +62,7 @@
             </div> -->
             <a href="" class="line3">Use 8 more characters with a max of letters, numbers & symbles</a>
             <a href="../html/login.html" class="line4">Sign in instead</a>
-            <input type="submit" name="" value="Next">
+            <input id="nxt" type="submit" name="" value="Next">
 
             
         </form>
