@@ -1,63 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <title>dashboard</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700">
+    <script src="https://kit.fontawesome.com/0b5e883f41.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
+
+<body>
+    <!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+    integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+
+</head>
+
 <body>
 
-    
-    
-    <div style="height: 60px; width:100%;background-color:none; top: 0px; margin-top: 30px; ">
-        <div class="menubutton" (click)="menu()" style="margin-right: 20px">
-           
-                <img style="border: none" class="menu" src="../assets/menu_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-                <img class="keep"  src="../assets/keep_2020q4_48dp.png" alt="">
-           
-        </div>
-        <div class="Searchbar">
-            <img style="margin-left: 10px; height: 30px; margin-top: 5px;" src="../assets/search_black_24dp.svg">
-            <input  class="inputSearchbox"  placeholder="Search">
-
-        </div>
-        <div class="heading">
-            <h1>Fundoo</h1>
-        </div>
-
-        <div class="icons">
-            <img style="width: 30px; " src="../assets/refresh_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-            <img style="width: 30px; margin-top: 100px;" src="../assets/menu_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-            <img style="width: 30px;" src="../assets/settings_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-        </div>
-        <div class="icons1" >
-            <img style="width: 40px; " src="../assets/apps_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
-            <img style="width: 40px; " src="../assets/person_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-        </div>
+  <div class="navbar">
+    <div class="subnav-one">
+      <div class="menu-icon" onclick="openDrawer()">&#9776;</div>
+      <div><img src="../assets/keep_2020q4_48dp.png" class="keep-img"></div>
+      <span class="keep-txt">Fundoo</span>
     </div>
-
-    <div class="icon-bars">
-        <img src="../assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-        <span style="margin-left: 140px;font-size: 20px;top: -100px;">notes</span>
-
-        <img src="../assets/notifications_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-        <span style="margin-left: 140px;font-size: 20px;" class="Reminder">Reminder</span>
-
-        <img src="../assets/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="">
-        <span style="margin-left: 140px;font-size: 20px;" class="edit">EditLebal</span>
-
-        <img src="../assets/archive_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
-        <span style="margin-left: 140px; font-size: 20px;" class="Archive">Archive</span>
-
-        <img style="margin-top: 10px;" src="../assets/delete_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
-        <span style="margin-left: 140px; font-size: 20px;" class="Trash">Trash</span>
+    <div class="subnav-two">
+      <input class="searchBar" type="text" name="search" placeholder="Search">
 
     </div>
-
-    
-    
-
+    <div class="right-icons">
+        <img style="width: 30px;margin-left: -100px;" src="../assets/refresh_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+        <img style="width: 30px; margin-left: 20px;"  src="../assets/menu_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+        <img style="width: 30px; margin-left: 10px;" src="../assets/settings_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+    </div>
+    <div>
+        <img style="width: 35px;" src="../assets/apps_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+        <img style="width:35px ;" src="../assets/person_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+    </div>
+   
+    </div>
+   
+  <div id="snackbar"></div>
+  <div class="myDrawer">
+    <button  style="background: transparent;border: none;">
+      <div class="notes drawer"><img src="../assets/lightbulb_FILL0_wght400_GRAD0_opsz48.svg" alt=""><span class="drawer-span">Notes</span></div>
+    </button>
+    <button  style="background: transparent;border: none;">
+        <div class="archive drawer"><img src="../assets/notifications_FILL0_wght400_GRAD0_opsz48.svg" alt=""><span class="drawer-span">Archives</span>
+        </div>
+      </button>
+      <button  style="background: transparent;border: none;">
+        <div class="archive drawer"><img src="../assets/edit_FILL0_wght400_GRAD0_opsz48.svg" alt=""><span class="drawer-span">Archives</span>
+        </div>
+      </button>
+    <button  style="background: transparent;border: none;">
+      <div class="archive drawer"><img src="../assets/archive_FILL0_wght400_GRAD0_opsz48 (1).svg" alt=""><span class="drawer-span">Archives</span>
+      </div>
+    </button>
+    <button style="background: transparent;border: none;">
+      <div class="trash drawer"><img src="../assets/delete_FILL0_wght400_GRAD0_opsz48 (1).svg" alt=""><span class="drawer-span">Trash</span></div>
+    </button>
+  </div>
 </body>
+
+</html>
+</body>
+
 </html>

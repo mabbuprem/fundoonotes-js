@@ -1,180 +1,197 @@
-.body {
-    background-color: brown;
-}
 
-.toolbar {
+  body {
     width: 100%;
-    height: 30px;
-
-
-}
-
-.search {
-    padding-left: 100px;
-    width: 59px;
-}
-
-.f {
-    color: blue;
-    font-weight: bold;
-    font-family: sans-serif;
-    text-align: center;
-    padding: 1px;
-    font-size: 25px;
-}
-
-.u {
-    color: red;
-    font-weight: bold;
-    font-family: sans-serif;
-    text-align: center;
-    padding: 1px;
-    font-size: 25px;
-
-}
-
-.n {
-    color: yellow;
-    font-weight: bold;
-    font-family: sans-serif;
-    text-align: center;
-    padding: 1px;
-    font-size: 25px;
-
-}
-
-.d {
-    color: blue;
-    font-weight: bold;
-    font-family: sans-serif;
-    text-align: center;
-    padding: 1px;
-    font-size: 25px;
-
-}
-
-.o {
-    color: green;
-    font-weight: bold;
-    font-family: sans-serif;
-    text-align: center;
-    padding: 1px;
-    font-size: 25px;
-
-}
-
-.oo {
-    color: red;
-    font-weight: bold;
-    font-family: sans-serif;
-    text-align: center;
-    padding: 0px;
-    font-size: 25px;
-}
-
-.heading {
-    padding: 1px;
-    padding-left: 150px;
-    padding-bottom: -80px;
-    margin-top: -55px;
-    font-size: 13px;
-    color: #5f6368;
-}
-
-.keep {
-    width: 40px;
-
-    /* margin-top: -100px; */
-    margin-left: 10px;
-
-
-}
-
-.Searchbar {
+    height: 100vh;
+    margin: 0;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 64px;
+    align-items: center;
+    border-bottom: 1px solid gainsboro;
+  }
+  
+  .subnav-one {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    height: 45px;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .subnav-two {
     display: flex;
     flex-direction: row;
-    justify-items: center;
-    padding-top: 5px;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: -50px;
+   
+  }
+  
+  .keep-img {
+    width: 26px;
+    height: 35px;
+  }
+  
+  .keep-txt {
+    font-size: 22px;
+    padding-left: 20px;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    margin-left: -150px;
+    margin-right: 10%;
+    width: 24px;
+    cursor: pointer;
+  }
+  .header-icons{
 
-    background: #f1f3f4;
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-around;
+  
+  }
+.grid, .setting, .grid1, .refresh{
+    background: transparent;
     border: none;
-    border: 1px solid transparent;
-    width: 600px;
-    border-radius: 10px;
-    height: 40px;
-    color: #5f6368;
-    margin-left: 300px;
-    margin-top: -45px;
-    padding-top: 5px;
-
-
 }
 
-.inputSearchbox {
-    border: 0;
-    outline: 0;
-    background-color: transparent;
-    width: 100%;
-    margin-top: -5px;
-    font-size: 19px;
-}
-
-.menubutton {
-
-    margin-left: 1px;
-    margin-top: -30px;
-
-
-}
-
-.menu {
-    border: none;
-    background-color: transparent;
-    width: 35px;
-    margin-top: 10px;
-    margin-left: 30px;
-
-}
-
-.icons {
-    margin-left: 950px;
-    margin-top: -150px;
-    
-
-
-}
-
-.icons1 {
-    margin-left: 1150px;
-    margin-top: -40px;
-    gap: 20px;
-
-}
-
-.icon-bars {
-    font-family: calibri, sans-serif;
-    background-color: white;
-    width: 300px;
-    height: 80vh;
-}
-
-.icon-bars img {
-    display: block;
-    text-align: center;
-    justify-content: center;
-    
-    margin-left: 20px;
-    width: 30px;
-    color: lightgray;
-    margin-top:0px ;
-    
-}
-.icon-bars img:active{
-    background-color: blanchedalmond;
-}
-.notes{
+.right-icons{
+   display: flex;
+   justify-content: center;
+   align-items: center;
    
 }
-
-
-
+  .searchBar {
+    width: 80%;
+    box-sizing: border-box;
+    border: none;
+    background-color: #f1f3f4;
+    border-radius: 8px;
+    font-size: 16px;
+    background-position: 10px 10px;
+    padding: 12px 20px 12px 40px;
+    background-image: url("");
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+  }
+  
+  .subnav-three {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2%;
+    outline: none;
+    background-color: transparent;
+  }
+  
+  .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  } 
+  .userProfile {
+    display: none;
+    float: left;
+    margin-left: 80%;
+  }
+  .userProfile .myProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    height: 220px;
+    background-color: white;
+    
+    border-radius: 8px;
+    float: left;
+    z-index: 100;
+    position: fixed;
+  }
+  .userProfile .myProfile .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 8px 0 5px 0;
+    margin-bottom: 25px;
+  }
+  
+ 
+  .userProfile .myProfile button {
+    width: 100px;
+    height: 40px;
+    text-decoration: none;
+    margin-top: 15%;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background: transparent;
+  }
+  .myDrawer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    width: 65px;
+    height: 500px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+  }
+  .myDrawer .notes, .myDrawer .remainder, .myDrawer .label, .myDrawer .archive, .myDrawer .trash {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+  }
+  .myDrawer .notes .drawer-span, .myDrawer .remainder .drawer-span, .myDrawer .label .drawer-span, .myDrawer .archive .drawer-span, .myDrawer .trash .drawer-span {
+    align-items: center;
+    display: none;
+  }
+  .myDrawer .notes {
+    background-color: #feefc3;
+  }
+  .myDrawer img {
+    display: flex;
+    justify-content: center;
+    margin: 12px;
+  }
+  .myDrawer div:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0 25px 25px 0;
+    height: 48px;
+  }
+  .myDrawer div:hover .drawer-span {
+    display: flex;
+    margin-left: 40px;
+  } 
+  #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    margin-left: -125px;
+    background-color: #333;
+    padding: 16px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    font-size: 17px;
+  }
+  
+  #snackbar.display {
+    visibility: visible;
+    animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+  }
+  

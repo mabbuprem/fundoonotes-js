@@ -1,7 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
 
-    console.log("this is my first java script");
-
     let fnameServer, lnameServer, passwordMainServer, passwordConfirmServer, usernameServer;
 
     let fname = document.querySelector("#firstname");
@@ -20,27 +18,27 @@ window.addEventListener("DOMContentLoaded", function () {
     let regexfName = RegExp('^[A-Z]{1}[a-z]{3,}$');
     let regexlName = RegExp('^[A-Z]{1}[a-z]{3,}$');
     let regexuserName = RegExp('^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$');
-    let regexMainPassword = RegExp('^[A-Z]{1}[a-z]{1,3}[0-9]{1,5}$');
-    let regexConfirmPassword = RegExp('^[A-Z]{1}[a-z]{1,3}[0-9]{1,5}$');
+    let regexMainPassword = RegExp('^[A-Z]{1}[a-z]{1,}[0-9]{1,}$');
+    let regexConfirmPassword = RegExp('^[A-Z]{1}[a-z]{1,}[0-9]{1,}$');
 
-    fname.addEventListener("keyup", function () {
+    fname.addEventListener("change", function (event) {
         fnameServer = fname.value;
     })
 
-    lname.addEventListener("keyup", function () {
+    lname.addEventListener("change", function (event) {
         lnameServer = lname.value;
     })
 
-    passwordM.addEventListener("keyup", function () {
+    passwordM.addEventListener("change", function (event) {
         passwordMainServer = passwordM.value;
     })
 
-    passwordC.addEventListener("keyup", function () {
+    passwordC.addEventListener("change", function (event) {
         passwordConfirmServer = passwordC.value;
     })
 
 
-    userName.addEventListener("keyup", function () {
+    userName.addEventListener("change", function (event) {
         usernameServer = userName.value;
     })
 
@@ -111,7 +109,33 @@ window.addEventListener("DOMContentLoaded", function () {
             passwordCHelper.innerHTML = "Please enter a valid last name."
             passwordCHelper.style.color = "red"
         }
-    })
-}
 
-)
+        console.log(fnameStatus, lnameStatus, usernameStatus, pMainStatus, pConfirmStatus)
+
+
+
+        if (fnameStatus === true && lnameStatus === true && usernameStatus === true && pMainStatus === true && pConfirmStatus === true) {
+            let data = {
+                "firstname": fnameServer,
+                "lastname": lnameServer,
+                "password": passwordMainServer,
+                "email": usernameServer,
+                "password_confirmation": passwordConfirmServer,
+            }
+            console.log(data)
+
+            $(document).ready(function () {
+                $.ajax({
+                    url: "http://127.0.0.1:8000/api/register",
+                    type: "POST",
+                    data: data,
+                    'content-Type': 'application/json',
+                    success: function (result) {
+                        console.log(result);
+                    }
+                })
+            })
+        }
+
+    })
+})
