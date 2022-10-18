@@ -1,164 +1,14 @@
-.header{
-    display: flex;
-   
-    justify-content: space-between;
-    width:100vw;
-    height: 10vh;
-    border : 1px solid #F1F3F4;
-}
-
-.menu{
-    color: #5f6368;
-    
-    width:5%;
-    padding-left: 25px;
-    margin-top: 16px;
-   margin-right: 25px;
-    
-}
-
-#bar{
-    width: 25px;
-   
-    background-color: black;
-    margin-top:7px; 
-    border:2px solid #5f6368;
-  
-}
-
-.leftMenu{
-    display: flex;
-    width: 18%;
-   
-   
-}
-
-.rightMenu{
-    display: flex;
-   
-    width:20%;
-}
-
-#keep{
-    
-    margin-left: 20px;;
-}
-.search-start{
-    
-    overflow: hidden;
-   width: 900px;
-    display: flex;
-    margin:10px;
-    background-color: #F1F3F4;
-    border-radius: 10px;
-
-}
-
-.search-button{
-    padding:5px;
-    background: transparent;
-    border:none;
-    margin-left: 25px ;
-    margin-right: 25px;
-   
-}
-.search-input{
-    width: 700px;
-    padding-top: 10px;
-    margin-top: 15px;
-    margin-left: 10px;
-    text-align: center;
-    background: transparent;
-   border: transparent;
-    font: normal 16px Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
-}
-
-.close-search{
-    margin-left: 5%;
-    background: transparent;
-    border: none;
-
-}
-
-
-
-
-h2{
-   
-    padding-left: 15px;
-    padding-top:2px;
-    display: inline-block;
-    font-family: 'Product Sans',Arial,sans-serif;
-    font-size: 22px;
-    line-height: 24px;
-    color: #5f6368;
-    box-sizing: border-box;
-}
-
-
- .link{
-     display: flex;
-     flex-direction: column;
- }
-
- #refresh{
-    
-     margin-left:25px;
-     margin-top: 20px;
-     width: 20%;
-     height: 60%;
-     font-size: xx-large;
- }
-
- #image2{
-  
-    
-    margin-top: 25px;
-    width: 10%;
-    height: 40%;
-    font-size:medium;
- }
-
- #settingIcon{
-   
-    font-size: xx-large;
-    margin-left:39px;
-    margin-top: 27px;
-    width: 20%;
-    height: 60%;
- }
-
- .link{
-    
-    margin-left:10px;
-   
- }
-
-#dot1{
-   
-    margin: 0px;
-    padding:0px;
-}
-#dot2{
-    
-    margin: 0px;
-    padding:0px;
-}
-#dot3{
-   
-    margin-top: 0px;
-    padding:0px;
-}
-
 
 /*Take notes*/
 
 .mainPage{
     /* border: 2px solid purple; */
     width: 90vw;
-    height: 90vh;
+    height: 150vh;
     display: flex;
     flex-direction: column;
+    margin-top: -480px;
+    margin-left: 200px;
 }
 .notes-container{
     display: flex;
@@ -244,7 +94,7 @@ textarea:focus, input:focus{
     border: none;
     font-size: x-large;
     background: transparent;
-    padding-left: 30px;
+    padding-left: 5px;
    
     /* border:2px solid red; */
    justify-content: center;
