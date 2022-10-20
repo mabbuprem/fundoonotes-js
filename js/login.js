@@ -56,8 +56,8 @@ window.addEventListener("DOMContentLoaded", function () {
             }
             console.log(data)
             $(document).ready(function () {
-                window.location="../html/dashboard.html"
-                // localStorage.setItem("token")
+                
+                
                 $.ajax({
                     url: "http://127.0.0.1:8000/api/login",
                     type: "POST",
@@ -67,6 +67,8 @@ window.addEventListener("DOMContentLoaded", function () {
                 
                     success: function (result) {
                         console.log(result);
+                        localStorage.setItem("token",result.token)
+                        window.location="../html/dashboard.html"
                     }
                     
                 })
