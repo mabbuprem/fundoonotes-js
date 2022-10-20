@@ -6,30 +6,15 @@ window.addEventListener('DOMContentLoaded', function () {
     let descIcon = document.querySelector(".descriptionIcon")
     let bottomIcon = document.querySelector(".mainBottomIcons")
     let closeB = document.querySelector(".closeButton")
-    let modeltitle = document.querySelector("#modaltitle")
+    let modeltitle = document.querySelector("#takeNoteTitleInput")
     console.log(modeltitle)
-    let modelDescription = document.querySelector("#modalDescription")
+    let modelDescription = document.querySelector("#takeNoteDescrptionInput")
     console.log(modelDescription);
+    let token = localStorage.getItem('token');
 
-    let mainNoteBackgroundColor = document.querySelector(".notes-main")
-    let token = localStorage.getItem('token')
-    
 
     titleServer = "";
     descriptionServer = ""
-
-    var modalNew = document.getElementById("noteModal");
-    var container = document.getElementsByClassName("note1");
-
-    container.onclick = function () {
-        modal.style.display = "block";
-    }
-    window.onclick = function (event) {
-        if (event.target == modalNew) {
-            modalNew.style.display = "block";
-        }
-    }
-    
 
     title2.addEventListener("change", function () {
         titleServer = title2.value
@@ -39,7 +24,7 @@ window.addEventListener('DOMContentLoaded', function () {
     titleDescription.addEventListener("change", function () {
         descriptionServer = titleDescription.value
     })
-   
+
     $(document).ready(function () {
         $(".takeNote").click(function () {
             title2.style.display = "inline"
@@ -54,51 +39,70 @@ window.addEventListener('DOMContentLoaded', function () {
 
         });
 
-        $(".closeButton").click(function () {
-            title2.style.display = "none"
-            descIcon.style.display = "contents"
-            bottomIcon.style.display = "none"
-            bottomIcon.style.height = "2px"
-            title2.style.background = "#FFFFFF";
-            titleDescription.style.background = "#FFFFFF";
-            mainNoteBackgroundColor.style.background = "#FFFFFF";
-            titleServer = " ";
-            descriptionServer = " ";
-            title2.value = "";
-            titleDescription.value = "";
-        })
+        // $(".closeButton").click(function () {
+        //     title2.style.display = "none"
+        //     descIcon.style.display = "contents"
+        //     bottomIcon.style.display = "none"
+        //     bottomIcon.style.height = "2px"
+        //     title2.style.background = "#FFFFFF";
+        //     titleDescription.style.background = "#FFFFFF";
+        //     titleServer = " ";
+        //     descriptionServer = " ";
+        //     title2.value = "";
+        //     titleDescription.value = "";
+        // })
 
 
 
     });
-   
+
 
     //Note Added
     closeB.addEventListener("click", function (event) {
         event.preventDefault()
-        const data = new FormData();
-        data.append("title", titleServer);
-        data.append("description", descriptionServer);
-        $(document).ready(function () {
-            $.ajax({
-                url: "http://127.0.0.1:8000\api\createNote",
-                type: "POST",
-                data: data,
-                // processData:false,
-              
-                headers: {
-                    'Authorization': "Bearer " + token,
-                    'content-Type': 'application/json'
-                   
-                },
-                success: function (result) {
-                    console.log(result);
+        let data = {
+            "title": titleServer,
+            "description": descriptionServer
+        }
+        console.log("show data", data, token)
 
-                }
-            })
+
+        // $(document).ready(function () {
+        $.ajax({
+            url: "http://127.0.0.1:8000/api/createNote",
+            type: "POST",
+            data: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token,
+            },
+            success: function (result) {
+                console.log(result);
+
+
+            }
+
         })
-    
+        console.log("get all notes")
+        $.ajax({
+            url: "http://127.0.0.1:8000/api/getAllNotes",
+            type: "GET",
+            data: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token,
+            },
+            
+            success: function (result) {
+                console.log(result);
+
+
+            }
+
+        })
     }
+
+
     )
 
 })
