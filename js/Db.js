@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', function () {
     let modelDescription = document.querySelector("#takeNoteDescrptionInput")
     console.log(modelDescription);
     let token = localStorage.getItem('token');
+    getallnotes();
 
 
     titleServer = "";
@@ -83,27 +84,73 @@ window.addEventListener('DOMContentLoaded', function () {
             }
 
         })
+
+
+
+    })
+
+    function getallnotes() {
         console.log("get all notes")
         $.ajax({
             url: "http://127.0.0.1:8000/api/getAllNotes",
             type: "GET",
-            data: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + token,
             },
-            
+
             success: function (result) {
-                console.log(result);
+                console.log(result.notes);
+                let notearray = result.notes
+                document.getElementById('notediv').innerHTML = notearray.map((note) => `
+                <div class="displaynotes">
+     
+                <p class="title">${note.title}</p>
+                <p class="title">${note.description}</p>
+
+                <div>
+                    <div>
+                        <img style="width: 25px;height: 25px; margin-top: 35px; margin-left: 10px;"
+                            src="../assets/add_alert_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                    </div>
+                    <div>
+                        <img style="width: 25px;height: 25px; margin-top: -45px; margin-left: 50px;"
+                            src="../assets/person_add_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                    </div>
+                    <div class="colorPopup">
+                        <div class="dropdown">
+                            <div class="dropdown-content">
+                            </div>
+                            <div>
+                                <img style="width: 20px;height: 25px; margin-top: -70px; margin-left: 90px;"
+                                    src="../assets/palette_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img style="width: 25px;height: 25px; margin-top: -100px; margin-left: 123px;"
+                            src="../assets/image_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                    </div>
+                    <div >
+                        <img style="width: 25px;height: 25px; margin-top: -130px; margin-left: 165px;"
+                            src="../assets/archive_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                    </div>
+                    <div>
+                        <img style="width: 25px;height: 25px; margin-top: -160px; margin-left: 195px;"
+                            src="../assets/more_vert_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                    </div>
+                </div>
+
+                </div>
+                
+                `)
+
 
 
             }
 
         })
     }
-
-
-    )
 
 })
 

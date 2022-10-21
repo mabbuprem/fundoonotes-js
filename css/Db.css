@@ -107,6 +107,19 @@ textarea:focus, input:focus{
     width: 70%;
     border: none;
 }
+.displaynotes{
+    border: 2px solid black;
+    width: 250px;
+    height: 120px;
+    margin-left: 100px;
+    margin-top: 5px;
+    align-items: center;
+    align-items: flex-end;
+}
+.title{
+    margin-left: 15px;
+    font-size: 10px;
+}
 
 .note1{
     border: 1px solid #c7c9cc;
