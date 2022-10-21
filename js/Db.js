@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', function () {
     let bottomIcon = document.querySelector(".mainBottomIcons")
     let closeB = document.querySelector(".closeButton")
     let modeltitle = document.querySelector("#takeNoteTitleInput")
+    let archiveButton = document.querySelector(".ArchiveB")
     console.log(modeltitle)
     let modelDescription = document.querySelector("#takeNoteDescrptionInput")
     console.log(modelDescription);
@@ -17,6 +18,7 @@ window.addEventListener('DOMContentLoaded', function () {
     titleServer = "";
     descriptionServer = ""
 
+
     title2.addEventListener("change", function () {
         titleServer = title2.value
     })
@@ -25,6 +27,7 @@ window.addEventListener('DOMContentLoaded', function () {
     titleDescription.addEventListener("change", function () {
         descriptionServer = titleDescription.value
     })
+
 
     $(document).ready(function () {
         $(".takeNote").click(function () {
@@ -102,46 +105,42 @@ window.addEventListener('DOMContentLoaded', function () {
             success: function (result) {
                 console.log(result.notes);
                 let notearray = result.notes
+                // this.notesarray.reverse()
                 document.getElementById('notediv').innerHTML = notearray.map((note) => `
-                <div class="displaynotes">
-     
+                
+                <div class="displaynotes" >
+                
                 <p class="title">${note.title}</p>
-                <p class="title">${note.description}</p>
-
+                <p class="description">${note.description}</p>
+                <div  class="d-flex flex-row justify-content-start" >
                 <div>
-                    <div>
-                        <img style="width: 25px;height: 25px; margin-top: 35px; margin-left: 10px;"
+                <img class="icons"
                             src="../assets/add_alert_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
-                    </div>
-                    <div>
-                        <img style="width: 25px;height: 25px; margin-top: -45px; margin-left: 50px;"
-                            src="../assets/person_add_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
-                    </div>
-                    <div class="colorPopup">
-                        <div class="dropdown">
-                            <div class="dropdown-content">
-                            </div>
-                            <div>
-                                <img style="width: 20px;height: 25px; margin-top: -70px; margin-left: 90px;"
-                                    src="../assets/palette_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <img style="width: 25px;height: 25px; margin-top: -100px; margin-left: 123px;"
-                            src="../assets/image_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
-                    </div>
-                    <div >
-                        <img style="width: 25px;height: 25px; margin-top: -130px; margin-left: 165px;"
-                            src="../assets/archive_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
-                    </div>
-                    <div>
-                        <img style="width: 25px;height: 25px; margin-top: -160px; margin-left: 195px;"
-                            src="../assets/more_vert_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
-                    </div>
                 </div>
-
+                <div>
+                <img
+                    class="icons"  src="../assets/person_add_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
                 </div>
+                <div>
+                <img 
+               class="icons" src="../assets/palette_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                </div>
+                <div>
+                <img 
+               class="icons" src="../assets/image_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                </div>
+                <div id="ArchiveB">
+                <button class="btn-btn-primary prem"><img 
+                    class="icons"    src="../assets/archive_FILL0_wght400_GRAD0_opsz48 (1).svg" alt=""></button>
+                </div>
+                <div>
+                <img 
+                    class="icons"  src="../assets/more_vert_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                </div>
+               
+                </div>
+            </div>
+                
                 
                 `)
 
@@ -151,6 +150,36 @@ window.addEventListener('DOMContentLoaded', function () {
 
         })
     }
+    archiveButton.addEventListener("click", function (event) {
+        event.preventDefault()
+        let data ={
+            notearray : [event.currentTarget.id],
+            isArchived : true,
+           
+    }
+       
+        console.log("show data")
+
+        $.ajax({
+            url: "http://127.0.0.1:8000/api/archivenote",
+            type: "POST",
+            data: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token,
+            },
+            success: function (result) {
+                console.log(result);
+
+
+            }
+
+        })
+
+
+
+    })
+    
 
 })
 
