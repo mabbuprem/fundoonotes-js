@@ -257,10 +257,16 @@ flex-direction: column;
 
   /* color pallete styling */
 
+  .color-palette div:hover {background-color: #f1f1f1}
+  
+  .show {display:none;}
+
 .color-palette {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    padding: 5px 10px 3px;
-    width: 160px;
+    padding: 5px 5px 3px;
+    width: 250px;
+    height: 30px;
+    display: flex;
     }
     
     .color-palette div {
@@ -271,15 +277,14 @@ flex-direction: column;
     margin: 2px;
     opacity: 1;
     cursor: pointer;
-    display: inline-block;
-    outline: none !important;
+  
     }
     
     .color-palette div.circled {
       border-color: rgba(0, 0, 0, 0.2) !important;
       }
     
-    .btn:hover {
+    .btn div:hover {
     border: white;
     }
     
@@ -326,11 +331,20 @@ flex-direction: column;
     .bg-grey {
     background-color: #e8eaed;
     }
-    .remainder-btn {
-     display: none;
-     
+
+
+
+
+
+
+
+
+
+
+
+
     
-    }
+   
 
 
 
