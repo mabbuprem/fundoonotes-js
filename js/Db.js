@@ -14,7 +14,7 @@ console.log(modeltitle)
 let modelDescription = document.querySelector("#takeNoteDescrptionInput")
 console.log(modelDescription);
 let token = localStorage.getItem('token');
- let mybtn = document.getElementById("myBtn")
+let mybtn = document.getElementById("myBtn")
 getallnotes();
 // ArchiveNotes()
 
@@ -143,23 +143,23 @@ function getallnotes() {
                     class="icons"  src="../assets/person_add_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
                 </div>
                 <div  class="btn-group dropup" id="color-palette-dropdown">
-                <button onclick="colournote(${note.id})" class="btn-btn-primary prem" type="button" id="btn-colors" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"  aria-expanded="false">
+                <button   class=" prem" type="button" id="btn-colors" >
                 <img 
                class="icons" src="../assets/palette_FILL0_wght400_GRAD0_opsz48 (1).svg" alt=""></img>
                 </button>
                 <div class="color-palette dropdown-menu" id ="color-palette">
-                <div class="bg-white circled"></div>
-                <div class="bg-red"></div>
-                <div class="bg-orange"></div>
-                <div class="bg-yellow"></div>
-                <div class="bg-green"></div>
-                <div class="bg-turquoise"></div>
-                <div class="bg-blue"></div>
-                <div class="bg-dark-blue"></div>
-                <div class="bg-purple"></div>
-                <div class="bg-pink"></div>
-                <div class="bg-brown"></div>
-                <div class="bg-grey"></div>
+                <button onclick="colournote(${note.id},white)" class="bg-white circled"></button>
+                <button class="bg-red"></button>
+                <button class="bg-orange"></button>
+                <button class="bg-yellow"></button>
+                <button class="bg-green"></button>
+                <button class="bg-turquoise"></button>
+                <button class="bg-blue"></button>
+                <button class="bg-dark-blue"></button>
+                <button class="bg-purple"></button>
+                <button class="bg-pink"></button>
+                <button class="bg-brown"></button>
+                <button class="bg-grey"></button>
                 </div>
                 </div>
                 <div>
@@ -211,8 +211,6 @@ function ArchiveNotes(id) {
     console.log("archive", id)
     let data = {
         id: id
-
-
     }
     console.log("show data")
 
@@ -238,12 +236,8 @@ function trashNoteById(id) {
     console.log("trashnote", id)
     let data = {
         id: id
-
-
     }
     // console.log("show data")
-
-    // $(document).ready(function () {
     $.ajax({
         url: "http://127.0.0.1:8000/api/trashNoteById",
         type: "POST",
@@ -260,18 +254,15 @@ function trashNoteById(id) {
 
     })
 }
-
-function colournote(id,) {
-    console.log("color", id)
+//colornote
+function colournote(id,code) {
+    console.log("color", id,code)
     let data = {
         id: id,
-        color:bg-red
-
-
+        colour: code
     }
     // console.log("show data")
 
-    // $(document).ready(function () {
     $.ajax({
         url: "http://127.0.0.1:8000/api/colournote",
         type: "POST",
