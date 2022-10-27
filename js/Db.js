@@ -10,6 +10,7 @@ let modeltitle = document.querySelector("#takeNoteTitleInput")
 let archiveButton = document.querySelector(".prem")
 let trashButton = document.querySelector(".prem")
 let colorButton = document.querySelector(".prem")
+let btn = document.getElementById("btn-colors")
 console.log(modeltitle)
 let modelDescription = document.querySelector("#takeNoteDescrptionInput")
 console.log(modelDescription);
@@ -17,6 +18,9 @@ let token = localStorage.getItem('token');
 let mybtn = document.getElementById("myBtn")
 getallnotes();
 // ArchiveNotes()
+getallarchivednotes();
+getalltrashnotes();
+
 
 
 
@@ -142,26 +146,28 @@ function getallnotes() {
                 <img
                     class="icons"  src="../assets/person_add_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
                 </div>
-                <div  class="btn-group dropup" id="color-palette-dropdown">
-                <button   class=" prem" type="button" id="btn-colors" >
+    
+                <div class="btn-group dropup" id="color-palette-dropdown">
+                <button onclick="colorbtn()" class="prem" type="button" id="btn-colors" >
                 <img 
                class="icons" src="../assets/palette_FILL0_wght400_GRAD0_opsz48 (1).svg" alt=""></img>
                 </button>
                 <div class="color-palette dropdown-menu" id ="color-palette">
-                <button onclick="colournote(${note.id},white)" class="bg-white circled"></button>
-                <button class="bg-red"></button>
-                <button class="bg-orange"></button>
-                <button class="bg-yellow"></button>
-                <button class="bg-green"></button>
-                <button class="bg-turquoise"></button>
-                <button class="bg-blue"></button>
-                <button class="bg-dark-blue"></button>
-                <button class="bg-purple"></button>
-                <button class="bg-pink"></button>
-                <button class="bg-brown"></button>
-                <button class="bg-grey"></button>
+                <button onclick="colournote(${note.id},'white',)" class="bg-white circled prem"></button>
+                <button onclick="colournote(${note.id},'red')" class="bg-red"></button>
+                <button onclick="colournote(${note.id},'orange')" class="bg-orange"></button>
+                <button onclick="colournote(${note.id},'yellow')" class="bg-yellow"></button>
+                <button onclick="colournote(${note.id},'green')" class="bg-green"></button>
+                <button onclick="colournote(${note.id},'turquoise')" class="bg-turquoise"></button>
+                <button onclick="colournote(${note.id},'blue')" class="bg-blue"></button>
+                <button onclick="colournote(${note.id},'dark-blue')" class="bg-dark-blue"></button>
+                <button onclick="colournote(${note.id},'purple')" class="bg-purple"></button>
+                <button onclick="colournote(${note.id},'white')" class="bg-pink"></button>
+                <button onclick="colournote(${note.id},'pink')" class="bg-brown"></button>
+                <button onclick="colournote(${note.id},'grey')" class="bg-grey"></button>
                 </div>
                 </div>
+    
                 <div>
                 <img 
                class="icons" src="../assets/image_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
@@ -255,8 +261,8 @@ function trashNoteById(id) {
     })
 }
 //colornote
-function colournote(id,code) {
-    console.log("color", id,code)
+function colournote(id, code) {
+    console.log("color", id, code)
     let data = {
         id: id,
         colour: code
@@ -279,9 +285,63 @@ function colournote(id,code) {
 
     })
 }
+//colour button function
+function colorbtn() {
+    console.log("click btn")
+    document.getElementById('color-palette').style.display = "block"
+}
+
+// get all archive notes function
+function getallarchivednotes() {
+    console.log("getallarchivednotes")
+    $.ajax({
+        url: "http://127.0.0.1:8000/api/getallarchivednotes",
+        type: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+        },
+
+        success: function (result) {
+            console.log(result.notes);
+            // this.notesarray.reverse()
+        },
 
 
-//  })
+    })
+
+
+
+
+
+
+}
+// get all trash notes function
+function getalltrashnotes(){
+    console.log('get all trash notes')
+
+    $.ajax({
+        url: "http://127.0.0.1:8000/api/getAllTrashedNotes",
+        type: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+        },
+
+        success: function (result) {
+            console.log(result.notes);
+            // this.notesarray.reverse()
+        },
+
+
+    })
+}
+
+
+
+
+
+//   })
 
 
 

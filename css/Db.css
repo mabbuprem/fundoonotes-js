@@ -108,8 +108,13 @@ flex-direction: column;
    margin-top: -13px;
 }
 .prem{
-    background: transparent;
-    border: 0px;
+    background:transparent;
+    border: none;
+    /* border: 2px solid red;
+    
+    background-color: red;
+    height: 20px; */
+
     
    
 
@@ -118,6 +123,7 @@ flex-direction: column;
     height: 20px;
     width: 25px;
     margin: 40px 0px 0px 15px ;
+    /* border: 2px solid green; */
     
     
 }
@@ -258,38 +264,42 @@ flex-direction: column;
 
   /* color pallete styling */
 
+ 
+
   .color-palette button:hover  {background-color: #f1f1f1}
   
   
 
   #color-palette{
     display: none;
+
     
     
   }
-  #btn-colors:hover + #color-palette{
+  /* #btn-colors:hover + #color-palette{
     display: block;
     margin-top: 500px;
     
-  }
+  } */
 
 .color-palette{
-    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.2);
-    padding: 50px 50px 30px;
-    width: 250px;
-    height: 130px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* padding: 500px 500px 300px; */
+    width: 230px;
+    height: 170px;
     display: flex;
-    /* margin-top: 130vh; */
+   
     }
     
     .color-palette button  {
     box-sizing: border-box;
-    border-radius: 30%;
+    border-radius: 50%;
     height: 50px;
-    width: 35px;
+    width: 50px;
     margin: 2px;
     opacity: 1;
     cursor: pointer;
+    border: none;
   
     }
 
@@ -306,105 +316,66 @@ flex-direction: column;
     
     .btn button:hover {
     border: white;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+   
     }
     .bg-white {
         background-color: #f28b82;
-        height: 5vh;
-        width: 5vw;
-        flex-flow: row wrap;
-        justify-content: center;
+        
         }
     
     .bg-red {
     background-color: #f28b82;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+   
     }
     
     .bg-orange {
     background-color: #fbbc04;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+   
     }
     
     .bg-yellow {
     background-color: #fff475;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+   
     }
     
     .bg-green {
     background-color: #ccff90;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+    
     }
     
     .bg-turquoise {
     background-color: #a7ffeb;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+    
     }
     
     .bg-blue {
     background-color: #cbf0f8;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+    
     }
     
     .bg-dark-blue {
     background-color: #aecbfa;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+    
     }
     
     .bg-purple {
     background-color: #d7aefb;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+    
     }
     
     .bg-pink {
     background-color: #fdcfe8;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+    
     }
     
     .bg-brown {
     background-color: #e6c9a8;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+    
     }
     
     .bg-grey {
     background-color: #e8eaed;
-    height: 5vh;
-    width: 5vw;
-    flex-flow: row wrap;
-    justify-content: center;
+    
     }
 
 
