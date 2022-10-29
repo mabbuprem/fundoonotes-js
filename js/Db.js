@@ -1,4 +1,4 @@
-//  window.addEventListener('DOMContentLoaded', function () {
+//window.addEventListener('DOMContentLoaded', function () {
 
 let descriptionServer, titleServer, archiveStatusServer;
 let title2 = document.querySelector(".titleMain");
@@ -20,6 +20,7 @@ getallnotes();
 // ArchiveNotes()
 getallarchivednotes();
 getalltrashnotes();
+
 
 
 
@@ -107,6 +108,7 @@ closeB.addEventListener("click", function (event) {
         },
         success: function (result) {
             console.log(result);
+            // notesarray.reverse()
 
 
         }
@@ -133,7 +135,7 @@ function getallnotes() {
             // this.notesarray.reverse()
             document.getElementById('notediv').innerHTML = notearray.map((note) => `
                 
-                <div class="displaynotes" >
+                <div style="background-color:${note.colour}" class="displaynotes" >
                 
                 <p class="title">${note.title}</p>
                 <p class="description">${note.description}</p>
@@ -153,7 +155,7 @@ function getallnotes() {
                class="icons" src="../assets/palette_FILL0_wght400_GRAD0_opsz48 (1).svg" alt=""></img>
                 </button>
                 <div class="color-palette dropdown-menu" id ="color-palette">
-                <button onclick="colournote(${note.id},'white',)" class="bg-white circled prem"></button>
+                <button onclick="colournote(${note.id},'white',)" class="bg-white circled "></button>
                 <button onclick="colournote(${note.id},'red')" class="bg-red"></button>
                 <button onclick="colournote(${note.id},'orange')" class="bg-orange"></button>
                 <button onclick="colournote(${note.id},'yellow')" class="bg-yellow"></button>
@@ -177,10 +179,10 @@ function getallnotes() {
                     class="icons"   src="../assets/archive_FILL0_wght400_GRAD0_opsz48 (1).svg" alt=""></button>
                 </div>
                 <div class="dropdown">
-                <button class="btn-btn-primary prem" id="myBtn" class="dropbtn"><img 
+                <button onclick="morebtn()" class="btn-btn-primary prem" id="myBtn" class="dropbtn"><img 
                 class="icons"  src="../assets/more_vert_FILL0_wght400_GRAD0_opsz48 (1).svg" alt=""></button>
                 <div id="myDropdown" class="dropdown-content">
-               <button onclick="trashNoteById(${note.id})" class="prem" <a href=>Delete Note</a></button>
+               <button  onclick="trashNoteById(${note.id})" class="prem" <a href=>Delete Note</a></button>
                 <a href=>Add label</a>
                 <a href=>Add drawing</a>
                 <a href=>make a copy</a>
@@ -201,17 +203,9 @@ function getallnotes() {
     })
 
 
-    // Get the button, and when the user clicks on it, execute myFunction
-    // document.getElementById("myBtn").onclick = function () { myFunction() };
-
-    /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
-    // function myFunction() {
-    //     document.getElementById("myDropdown").classList.toggle("show");
-    // }
-
-
-
 }
+
+
 //ArchiveNotes
 function ArchiveNotes(id) {
     console.log("archive", id)
@@ -285,10 +279,16 @@ function colournote(id, code) {
 
     })
 }
+
 //colour button function
 function colorbtn() {
     console.log("click btn")
     document.getElementById('color-palette').style.display = "block"
+}
+
+function morebtn() {
+    console.log("click morebtn")
+    document.getElementById('myBtn').style.display = "block"
 }
 
 // get all archive notes function
@@ -317,7 +317,7 @@ function getallarchivednotes() {
 
 }
 // get all trash notes function
-function getalltrashnotes(){
+function getalltrashnotes() {
     console.log('get all trash notes')
 
     $.ajax({
@@ -341,7 +341,9 @@ function getalltrashnotes(){
 
 
 
-//   })
+
+
+   //})
 
 
 

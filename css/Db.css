@@ -278,13 +278,14 @@ flex-direction: column;
   }
   /* #btn-colors:hover + #color-palette{
     display: block;
-    margin-top: 500px;
+    
+    
     
   } */
 
 .color-palette{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    /* padding: 500px 500px 300px; */
+     padding: 500px 500px 300px; 
     width: 230px;
     height: 170px;
     display: flex;
@@ -306,7 +307,7 @@ flex-direction: column;
     
     
     /* .color-palette button.circled {
-      border-color: rgba(0, 0, 0, 0.2) !important;
+      border-color: rgba(0, 0, 0, 0.2);
       height: 5vh;
       width: 5vw;
       flex-flow: row wrap;
