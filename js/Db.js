@@ -20,6 +20,10 @@ getallnotes();
 // ArchiveNotes()
 getallarchivednotes();
 getalltrashnotes();
+deleteNoteById();
+restoreNoteById();
+unarchivenote();
+
 
 
 
@@ -139,7 +143,7 @@ function getallnotes() {
                 
                 <p class="title">${note.title}</p>
                 <p class="description">${note.description}</p>
-                <div  class="d-flex flex-row justify-content-start" >
+                <div   class="d-flex flex-row justify-content-start " >
                 <div>
                 <img class="icons"
                             src="../assets/add_alert_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
@@ -196,7 +200,7 @@ function getallnotes() {
 
 
                 
-                `)
+     `)
         },
 
 
@@ -226,7 +230,7 @@ function ArchiveNotes(id) {
         success: function (result) {
             console.log(result);
 
-
+        
         }
 
     })
@@ -286,37 +290,15 @@ function colorbtn() {
     document.getElementById('color-palette').style.display = "block"
 }
 
-function morebtn() {
-    console.log("click morebtn")
-    document.getElementById('myBtn').style.display = "block"
-}
-
-// get all archive notes function
-function getallarchivednotes() {
-    console.log("getallarchivednotes")
-    $.ajax({
-        url: "http://127.0.0.1:8000/api/getallarchivednotes",
-        type: "GET",
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + token,
-        },
-
-        success: function (result) {
-            console.log(result.notes);
-            // this.notesarray.reverse()
-        },
+// function morebtn() {
+//     console.log("click morebtn")
+//     document.getElementById('myBtn').style.display = "block"
+// }
 
 
-    })
-
-
-
-
-
-
-}
 // get all trash notes function
+
+
 function getalltrashnotes() {
     console.log('get all trash notes')
 
@@ -330,9 +312,194 @@ function getalltrashnotes() {
 
         success: function (result) {
             console.log(result.notes);
+            let notearray = result.notes
             // this.notesarray.reverse()
+            document.getElementById('notediv').innerHTML = notearray.map((note) => `
+                
+                <div class="displaynotes" >
+                
+                <p class="title">${note.title}</p>
+                <p class="description">${note.description}</p>
+                <div  class="d-flex flex-row justify-content-start" >
+                <div>
+                <button onclick="deleteNoteById(${note.id})" class="btn-btn-primary prem"><img class="icons"
+                src="../assets/delete_forever_FILL0_wght400_GRAD0_opsz48.svg" alt=""></button>
+                </div>
+                <div>
+                <button onclick="restoreNoteById(${note.id})" class="btn-btn-primary prem"><img
+                class="icons"  src="../assets/restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg" alt=""></button>
+                </div>
+    
+                
+               
+                </div>
+            </div>
+
+
+                
+     `)
         },
 
+
+    })
+}
+
+
+
+//getallarchivednotes
+function getallarchivednotes() {
+    console.log("getallarchivednotes")
+    $.ajax({
+        url: "http://127.0.0.1:8000/api/getallarchivednotes",
+        type: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+        },
+
+        success: function (result) {
+            console.log(result.notes);
+            let notearray = result.notes
+            // this.notesarray.reverse()
+            document.getElementById('notediv').innerHTML = notearray.map((note) => `
+                
+                <div style="background-color:${note.colour}" class="displaynotes" >
+                
+                <p class="title">${note.title}</p>
+                <p class="description">${note.description}</p>
+                <div  class="d-flex flex-row justify-content-start" >
+                <div>
+                <img class="icons"
+                            src="../assets/add_alert_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                </div>
+                <div>
+                <img
+                    class="icons"  src="../assets/person_add_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                </div>
+    
+                <div class="btn-group dropup" id="color-palette-dropdown">
+                <button onclick="colorbtn()" class="prem" type="button" id="btn-colors" >
+                <img 
+               class="icons" src="../assets/palette_FILL0_wght400_GRAD0_opsz48 (1).svg" alt=""></img>
+                </button>
+                <div class="color-palette dropdown-menu" id ="color-palette">
+                <button onclick="colournote(${note.id},'white',)" class="bg-white circled "></button>
+                <button onclick="colournote(${note.id},'red')" class="bg-red"></button>
+                <button onclick="colournote(${note.id},'orange')" class="bg-orange"></button>
+                <button onclick="colournote(${note.id},'yellow')" class="bg-yellow"></button>
+                <button onclick="colournote(${note.id},'green')" class="bg-green"></button>
+                <button onclick="colournote(${note.id},'turquoise')" class="bg-turquoise"></button>
+                <button onclick="colournote(${note.id},'blue')" class="bg-blue"></button>
+                <button onclick="colournote(${note.id},'dark-blue')" class="bg-dark-blue"></button>
+                <button onclick="colournote(${note.id},'purple')" class="bg-purple"></button>
+                <button onclick="colournote(${note.id},'white')" class="bg-pink"></button>
+                <button onclick="colournote(${note.id},'pink')" class="bg-brown"></button>
+                <button onclick="colournote(${note.id},'grey')" class="bg-grey"></button>
+                </div>
+                </div>
+    
+                <div>
+                <img 
+               class="icons" src="../assets/image_FILL0_wght400_GRAD0_opsz48 (1).svg" alt="">
+                </div>
+                <div >
+                <button onclick="unarchivenote(${note.id})" class="btn-btn-primary prem"><img  
+                    class="icons"   src="../assets/unarchive_FILL0_wght400_GRAD0_opsz48.svg" alt=""></button>
+                </div>
+                <div class="dropdown">
+                <button onclick="morebtn()" class="btn-btn-primary prem" id="myBtn" class="dropbtn"><img 
+                class="icons"  src="../assets/more_vert_FILL0_wght400_GRAD0_opsz48 (1).svg" alt=""></button>
+                <div id="myDropdown" class="dropdown-content">
+               <button  onclick="trashNoteById(${note.id})" class="prem" <a href=>Delete Note</a></button>
+                <a href=>Add label</a>
+                <a href=>Add drawing</a>
+                <a href=>make a copy</a>
+                <a href=>show checkbox</a>
+                  
+                </div>
+              </div>
+               
+                </div>
+            </div>
+
+
+                
+     `)
+        },
+
+
+    })
+
+}
+
+//deleteNoteById
+
+function deleteNoteById(id) {
+    console.log("deleteNoteByIds")
+    let data = {
+        id: id
+    }
+    // console.log("show data")
+    $.ajax({
+        url: "http://127.0.0.1:8000/api/deleteNoteById",
+        type: "DELETE",
+        data: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+        },
+        success: function (result) {
+            console.log(result);
+
+
+        }
+
+    })
+}
+//restoreNoteById
+function restoreNoteById(id) {
+    console.log("restoreNoteByIds")
+    let data = {
+        id: id
+    }
+    // console.log("show data")
+    $.ajax({
+        url: "http://127.0.0.1:8000/api/restoreNoteById",
+        type: "POST",
+        data: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+        },
+        success: function (result) {
+            console.log(result);
+
+
+        }
+
+    })
+}
+
+//unarchivenote
+function unarchivenote(id) {
+    console.log("unarchivenotes")
+    let data = {
+        id: id
+    }
+    // console.log("show data")
+    $.ajax({
+        url: "http://127.0.0.1:8000/api/unarchivenote",
+        type: "POST",
+        data: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+        },
+        success: function (result) {
+            console.log(result);
+
+
+        }
 
     })
 }
@@ -343,7 +510,12 @@ function getalltrashnotes() {
 
 
 
-   //})
+
+
+
+
+
+
 
 
 
